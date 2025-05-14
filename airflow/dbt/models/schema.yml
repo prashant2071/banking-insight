@@ -1,0 +1,25 @@
+version: 2
+sources:
+  - name: raw
+    description: "This source contains transaction data from the bank."
+    schema: public
+    tables:
+      - name: transactions
+        description: "This table contains transaction data from the bank."
+        schema: public
+
+      - name: customers
+        description: "This table contains customer data from the bank."
+        schema: public
+
+      - name: accounts
+        description: "This table contains account data from the bank."
+        schema: public
+
+      - name: cards
+        description: "This table contains card data from the bank."
+        schema: public
+
+      - name: products
+        description: "This table contains product data from the bank."
+        schema: public

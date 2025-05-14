@@ -1,0 +1,19 @@
+[2025-05-13T12:27:08.757+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-13T12:27:08.792+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: capstone_projct.print_product_name scheduled__2025-05-12T01:00:00+00:00 [queued]>
+[2025-05-13T12:27:08.816+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: capstone_projct.print_product_name scheduled__2025-05-12T01:00:00+00:00 [queued]>
+[2025-05-13T12:27:08.817+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2025-05-13T12:27:08.878+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): print_product_name> on 2025-05-12 01:00:00+00:00
+[2025-05-13T12:27:08.888+0000] {standard_task_runner.py:72} INFO - Started process 138 to run task
+[2025-05-13T12:27:08.892+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'capstone_projct', 'print_product_name', 'scheduled__2025-05-12T01:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/welcome_dag.py', '--cfg-path', '/tmp/tmp7qjaqr1l']
+[2025-05-13T12:27:08.895+0000] {standard_task_runner.py:105} INFO - Job 9: Subtask print_product_name
+[2025-05-13T12:27:09.066+0000] {task_command.py:467} INFO - Running <TaskInstance: capstone_projct.print_product_name scheduled__2025-05-12T01:00:00+00:00 [running]> on host 0fd2687fe5b0
+[2025-05-13T12:27:09.280+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='capstone_projct' AIRFLOW_CTX_TASK_ID='print_product_name' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-12T01:00:00+00:00'
+[2025-05-13T12:27:09.283+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-13T12:27:10.208+0000] {logging_mixin.py:190} INFO - Product name is : "Smartphone X"
+[2025-05-13T12:27:10.210+0000] {logging_mixin.py:190} INFO - Smartphone X
+[2025-05-13T12:27:10.213+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-13T12:27:10.261+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-13T12:27:10.263+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=capstone_projct, task_id=print_product_name, run_id=scheduled__2025-05-12T01:00:00+00:00, execution_date=20250512T010000, start_date=20250513T122708, end_date=20250513T122710
+[2025-05-13T12:27:10.402+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-13T12:27:10.462+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T12:27:10.476+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

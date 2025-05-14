@@ -1,0 +1,124 @@
+[2025-05-13T12:55:08.965+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-13T12:55:09.000+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: capstone_projct.dbt_run_raw_stage manual__2025-05-13T12:53:22.421811+00:00 [queued]>
+[2025-05-13T12:55:09.023+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: capstone_projct.dbt_run_raw_stage manual__2025-05-13T12:53:22.421811+00:00 [queued]>
+[2025-05-13T12:55:09.024+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 3
+[2025-05-13T12:55:09.069+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): dbt_run_raw_stage> on 2025-05-13 12:53:22.421811+00:00
+[2025-05-13T12:55:09.077+0000] {standard_task_runner.py:72} INFO - Started process 530 to run task
+[2025-05-13T12:55:09.081+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'capstone_projct', 'dbt_run_raw_stage', 'manual__2025-05-13T12:53:22.421811+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/welcome_dag.py', '--cfg-path', '/tmp/tmpqmgrnwr0']
+[2025-05-13T12:55:09.084+0000] {standard_task_runner.py:105} INFO - Job 35: Subtask dbt_run_raw_stage
+[2025-05-13T12:55:09.229+0000] {task_command.py:467} INFO - Running <TaskInstance: capstone_projct.dbt_run_raw_stage manual__2025-05-13T12:53:22.421811+00:00 [running]> on host 0fd2687fe5b0
+[2025-05-13T12:55:09.378+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='capstone_projct' AIRFLOW_CTX_TASK_ID='dbt_run_raw_stage' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T12:53:22.421811+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T12:53:22.421811+00:00'
+[2025-05-13T12:55:09.380+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-13T12:55:09.400+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-05-13T12:55:09.402+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /usr/local/airflow/dags/dbt_pipeline && dbt run -s raw']
+[2025-05-13T12:55:09.418+0000] {subprocess.py:99} INFO - Output:
+[2025-05-13T12:55:12.313+0000] {subprocess.py:106} INFO - [0m12:55:12  Running with dbt=1.9.4
+[2025-05-13T12:55:12.752+0000] {subprocess.py:106} INFO - [0m12:55:12  Registered adapter: postgres=1.9.0
+[2025-05-13T12:55:13.814+0000] {subprocess.py:106} INFO - [0m12:55:13  Encountered an error:
+[2025-05-13T12:55:13.814+0000] {subprocess.py:106} INFO - 'dbt_postgres://macros/relations.sql'
+[2025-05-13T12:55:13.816+0000] {subprocess.py:106} INFO - [0m12:55:13  Traceback (most recent call last):
+[2025-05-13T12:55:13.817+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 153, in wrapper
+[2025-05-13T12:55:13.818+0000] {subprocess.py:106} INFO -     result, success = func(*args, **kwargs)
+[2025-05-13T12:55:13.819+0000] {subprocess.py:106} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.819+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 103, in wrapper
+[2025-05-13T12:55:13.820+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2025-05-13T12:55:13.822+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.823+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 235, in wrapper
+[2025-05-13T12:55:13.824+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2025-05-13T12:55:13.825+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.826+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 264, in wrapper
+[2025-05-13T12:55:13.826+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2025-05-13T12:55:13.827+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.828+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 311, in wrapper
+[2025-05-13T12:55:13.829+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2025-05-13T12:55:13.830+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.831+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 327, in wrapper
+[2025-05-13T12:55:13.831+0000] {subprocess.py:106} INFO -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+[2025-05-13T12:55:13.832+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 351, in setup_manifest
+[2025-05-13T12:55:13.833+0000] {subprocess.py:106} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2025-05-13T12:55:13.834+0000] {subprocess.py:106} INFO -                           ^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.834+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 2069, in parse_manifest
+[2025-05-13T12:55:13.835+0000] {subprocess.py:106} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2025-05-13T12:55:13.835+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-13T12:55:13.836+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 312, in get_full_manifest
+[2025-05-13T12:55:13.838+0000] {subprocess.py:106} INFO -     manifest = loader.load()
+[2025-05-13T12:55:13.839+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^
+[2025-05-13T12:55:13.840+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 381, in load
+[2025-05-13T12:55:13.840+0000] {subprocess.py:106} INFO -     self.load_and_parse_macros(project_parser_files)
+[2025-05-13T12:55:13.841+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 683, in load_and_parse_macros
+[2025-05-13T12:55:13.842+0000] {subprocess.py:106} INFO -     block = FileBlock(self.manifest.files[file_id])
+[2025-05-13T12:55:13.842+0000] {subprocess.py:106} INFO -                       ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-05-13T12:55:13.843+0000] {subprocess.py:106} INFO - KeyError: 'dbt_postgres://macros/relations.sql'
+[2025-05-13T12:55:13.843+0000] {subprocess.py:106} INFO - 
+[2025-05-13T12:55:15.948+0000] {subprocess.py:110} INFO - Command exited with return code 2
+[2025-05-13T12:55:15.978+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-05-13T12:55:15.999+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=capstone_projct, task_id=dbt_run_raw_stage, run_id=manual__2025-05-13T12:53:22.421811+00:00, execution_date=20250513T125322, start_date=20250513T125509, end_date=20250513T125515
+[2025-05-13T12:55:16.098+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-13T12:55:16.100+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 35 for task dbt_run_raw_stage (Bash command failed. The command returned a non-zero exit code 2.; 530)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-05-13T12:55:16.130+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-05-13T12:55:16.164+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T12:55:16.166+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
