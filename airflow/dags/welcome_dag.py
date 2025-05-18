@@ -12,24 +12,17 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'retries': 2, 
-    'retry_delay': timedelta(minutes=1)
+    'retry_delay': timedelta(minutes=1),
+    'email': 'pbt133393@gmail.com',
+    'email_on_failure':True
+    # 'email_on_retry':True
 }
 def print_welcome():
-    print('Welcome to Airflow!')
-
-def print_date():
-    print('Today is {}'.format(datetime.today().date()))
-
-
-def print_random_quote():
-    response = requests.get('https://fakeapi.net/products/1')
-    quote = response.json()['title']
-    print('Product name is : "{}"'.format(quote))
-    print(quote)
-
+    # print("welcome")
+    print(f"dsfda{sdfa}")
 
 dag = DAG(
-    dag_id='capstone_projct',
+    dag_id='welcome_dag',
     default_args=default_args,
     description='DAG with retry logic and logging',
     schedule_interval='0 1 * * *', 
@@ -42,23 +35,4 @@ print_welcome_task = PythonOperator(
     python_callable=print_welcome,
     dag=dag
 )
-
-print_random_quote = PythonOperator(
-    task_id='print_product_name',
-    python_callable=print_random_quote,
-    dag=dag
-
-) 
-
-dbt_raw_stage = BashOperator(
-    task_id='dbt_run_raw_stage',
-    bash_command=f'cd {DBT_PROJECT_DIR} && dbt run -s raw',
-    dag=dag
-)
-dbt_staging_stage = BashOperator(
-    task_id='dbt_run_staging_stage',
-    bash_command=f'cd {DBT_PROJECT_DIR} && dbt run -s staging',
-    dag=dag
-)
-
-print_welcome_task >>  print_random_quote >> dbt_raw_stage >>dbt_staging_stage
+print_welcome_task
