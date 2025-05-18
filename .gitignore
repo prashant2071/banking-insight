@@ -1,1 +1,3 @@
 airflow/dbt/profiles.yml
+*.log
+airflow/logs/

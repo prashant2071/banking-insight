@@ -25,7 +25,7 @@ select
     constitution_code::VARCHAR as constitution_code,
     constitution_code_desc::VARCHAR as constitution_code_desc,
     mobile_number::VARCHAR as mobile_number,
-    account_relationship_date::TIMESTAMP as account_relationship_date
+    COALESCE(account_relationship_date::TIMESTAMP,CURRENT_TIMESTAMP) as account_relationship_date
 
 
 from customer_src
